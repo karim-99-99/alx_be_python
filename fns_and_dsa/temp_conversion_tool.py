@@ -12,13 +12,15 @@ def convert_to_fahrenheit(celsius):
 
 temp = input ("Enter the temperature to convert:")
 unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
-
-if unit == 'C':
-    converted_temp = convert_to_fahrenheit(float(temp))
-    print(f"{temp}°C is {converted_temp}°F")
-elif unit == 'F':
-    converted_temp = convert_to_celsius(float(temp))
-    print(f"{temp}°F is {converted_temp}°C")
-else:
-    print("Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
-
+try:
+    temp = float(temp)
+    if unit == 'C':
+       converted_temp = convert_to_fahrenheit(float(temp))
+       print(f"{temp}°C is {converted_temp}°F")
+    elif unit == 'F':
+       converted_temp = convert_to_celsius(float(temp))
+       print(f"{temp}°F is {converted_temp}°C")
+    else:
+       print("Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
+except ValueError:
+    print("Invalid temperature. Please enter a numeric value.")
