@@ -14,6 +14,5 @@ class BankAccount:
             self.account_balance -= amount
             return True
 
-    def display_balance(self):
-        # Instead of printing directly, return the formatted balance
-        return f"Current Balance: ${self.account_balance:.2f}"
+def display_balance(self):
+    return f"Current Balance: ${self.account_balance:.2f}"
