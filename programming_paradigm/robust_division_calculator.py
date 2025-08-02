@@ -13,4 +13,4 @@ def safe_divide(numerator, denominator):
         return "Error: Cannot divide by zero."
 
     except ValueError:
-        return "Error: Non-numeric input detected."
+        return "Error: Please enter numeric values only."
