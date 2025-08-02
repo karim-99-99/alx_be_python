@@ -4,7 +4,7 @@ def safe_divide(numerator, denominator):
         num = float(numerator)
         denom = float(denominator)
 
-        # Perform division and return formatted result
+        # Perform division
         result = num / denom
         return f"The result of the division is {result}"
 
@@ -12,4 +12,4 @@ def safe_divide(numerator, denominator):
         return "Error: Cannot divide by zero."
 
     except ValueError:
-        return "Error: Non-numeric input detected."
+        return "Error: Please enter numeric values only."
