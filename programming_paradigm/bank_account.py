@@ -1,3 +1,5 @@
+# bank_account.py
+
 class BankAccount:
     def __init__(self, account_balance=0):
         self.account_balance = account_balance
@@ -12,11 +14,5 @@ class BankAccount:
             self.account_balance -= amount
             return True
 
-    def display_balance(self):
-        return f"Current Balance: ${self.account_balance:.2f}"
-
-
-# Example run:
-account = BankAccount()
-account.deposit(250)
-print(account.display_balance())  # ✅ Must use print!
+def display_balance(self):
+    return f"Current Balance: ${self.account_balance:.2f}"
