@@ -30,6 +30,6 @@ class Book:
             """Return a book to the library by title."""
             for book in self.books:
                 if book.title == title:
-                    book._is_checked_out = False
+                    book.return_book()  # ✅ Uses Book.return_book()
                     return True
             return False
