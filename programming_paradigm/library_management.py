@@ -14,23 +14,23 @@ class Book:
 
 class Library:
     def __init__(self):
-        self.books = []
+        self._books = []  # <-- changed here
 
     def add_book(self, book):
         """Add a book to the library."""
-        self.books.append(book)
+        self._books.append(book)
 
     def remove_book(self, title):
         """Remove a book from the library by title."""
-        self.books = [book for book in self.books if book.title != title]
+        self._books = [book for book in self._books if book.title != title]
 
     def list_books(self):
         """List all books in the library."""
-        return [(book.title, book.author, book._is_checked_out) for book in self.books]
+        return [(book.title, book.author, book._is_checked_out) for book in self._books]
 
     def check_out_book(self, title):
         """Check out a book from the library by title."""
-        for book in self.books:
+        for book in self._books:
             if book.title == title and not book._is_checked_out:
                 book._is_checked_out = True
                 return True
@@ -38,7 +38,7 @@ class Library:
 
     def return_book(self, title):
         """Return a book to the library by title."""
-        for book in self.books:
+        for book in self._books:
             if book.title == title and book._is_checked_out:
                 book.return_book()
                 return True
