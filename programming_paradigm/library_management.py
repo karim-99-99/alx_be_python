@@ -14,7 +14,7 @@ class Book:
 
 class Library:
     def __init__(self):
-        self._books = []  # <-- changed here
+        self._books = []
 
     def add_book(self, book):
         """Add a book to the library."""
@@ -27,6 +27,10 @@ class Library:
     def list_books(self):
         """List all books in the library."""
         return [(book.title, book.author, book._is_checked_out) for book in self._books]
+
+    def list_available_books(self):
+        """List all books that are currently available (not checked out)."""
+        return [(book.title, book.author) for book in self._books if not book._is_checked_out]
 
     def check_out_book(self, title):
         """Check out a book from the library by title."""
