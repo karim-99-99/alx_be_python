@@ -1,14 +1,15 @@
+import math
+
 class Shape:
     def area(self):
         raise NotImplementedError("Subclasses must implement this method")
-        
 
 class Circle(Shape):
     def __init__(self, radius):
         self.radius = radius
 
     def area(self):
-        return 3.14 * self.radius * self.radius
+        return math.pi * self.radius * self.radius
 
 class Rectangle(Shape):
     def __init__(self, width, height):
